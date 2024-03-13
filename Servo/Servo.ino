@@ -21,15 +21,16 @@ void setup() {
 }
 
 void loop() {
-  //potVal = analogRead(potPin);
+  potVal = analogRead(potPin);
   
 
-  myServo.write(angle90);
+  //myServo.write(angle90);
+  myServo.write
   delay(2000);
-  myServo.write(angle30);
-  delay(2000);
-  myServo.write(angle180);
-  delay(2000);
+  //myServo.write(angle30);
+  //delay(2000);
+  //myServo.write(angle180);
+  //delay(2000);
 
 
 }
