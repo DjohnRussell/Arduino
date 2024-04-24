@@ -59,19 +59,5 @@ void loop() {
   // Calling the function as writen above, it will also chage angle of the servo to point at the senser with the hights value.
   highesValue(photoValueA0, photoValueA1, photoValueA2);
 
-  /*
-  if(photoValueA0 > photoValueA1 && photoValueA0 > photoValueA2 ) {
-    myServo.write(90);
-  }
-
-  else if(photoValueA1 > photoValueA0 && photoValueA1 > photoValueA2 ) {
-    myServo.write(60);
-  }
-
-  else if (photoValueA2 > photoValueA0 && photoValueA2 > photoValueA1 ) {
-    myServo.write(30);
-  }
-  */
-
   
 }
