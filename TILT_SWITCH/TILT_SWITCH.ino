@@ -1,4 +1,5 @@
 //----------- Tilt switch--------------
+// tilt one pin -> (1-13), other side but same side to gnd
 
 const int led = 4;
 const int led_2 = 5;
