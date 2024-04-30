@@ -1,4 +1,3 @@
-# Arduino
 # Arduino Starter Kit README
 
 Welcome to the Arduino Starter Kit! This README file provides basic explanations for the connections of all the included parts of the kit.
@@ -12,6 +11,8 @@ Welcome to the Arduino Starter Kit! This README file provides basic explanations
 5. LCD (Liquid Crystal Display)
 6. Resistors
 7. Jumper Wires
+8. Switch Button
+9. Potentiometer
 
 ## Connections:
 
@@ -47,9 +48,23 @@ Connect the LCD to the Arduino as follows:
 
 Resistors are used to limit the current flowing through components like LEDs. Connect resistors in series with LEDs as explained above. Jumper wires are used to create connections between various components and the Arduino. They are plugged into the pins of the components and the Arduino's headers to establish electrical connections.
 
+### Switch Button:
+
+Connect the switch button to the Arduino as follows:
+- Connect one terminal of the switch button to a digital pin on the Arduino (e.g., pin 7).
+- Connect the other terminal of the switch button to the ground (GND) pin on the Arduino.
+- Optionally, connect a pull-up or pull-down resistor (e.g., 10k Ohm) between the digital pin and the power supply (5V or GND) to ensure stable readings.
+
+### Potentiometer:
+
+Connect the potentiometer to the Arduino as follows:
+- Connect one outer terminal of the potentiometer to the 5V pin on the Arduino.
+- Connect the other outer terminal of the potentiometer to the ground (GND) pin on the Arduino.
+- Connect the center terminal (wiper) of the potentiometer to an analog pin on the Arduino (e.g., A0). This terminal will provide varying voltage levels based on the potentiometer's position, allowing you to read analog values.
+
 ## Example Code:
 
-Example code for using the LED, Piezo Buzzer, DC Motor, and LCD with the Arduino can be found in the respective sections of this README.
+Example code for using the LED, Piezo Buzzer, DC Motor, LCD, switch button, and potentiometer with the Arduino can be found in the respective sections of this README.
 
 ### Quick For Loop Example:
 
