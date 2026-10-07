@@ -3,9 +3,10 @@ const int RED_LED_PIN = 7;
 const int GREEN_LED_PIN = 8;
 const int MOTOR_PIN = 9;
 const int PHOTO_PIN = A0;
-const int THRESHOLD = 500;
+const int THRESHOLD = 10000;
 const int BLINK_DURATION = 1500;
 const int ACTION_DELAY = 2000;
+
 //--------------------------------------------------------------------------------------------------------------------
 
 void setup() {
@@ -14,7 +15,6 @@ void setup() {
   pinMode(GREEN_LED_PIN, OUTPUT);
   //--------------DC Motor-------------------
   pinMode(MOTOR_PIN, OUTPUT);
-
   Serial.begin(9600);
 }
 
@@ -50,11 +50,13 @@ void readPinAndAction(int photoPin, int motorPin) {
 
   if (sensorValue < THRESHOLD) {
     blink(GREEN_LED_PIN);
+    digitalWrite(RED_LED_PIN, LOW);
     delay(ACTION_DELAY);
     motorGo(motorPin);
   }
   else {
     blink(RED_LED_PIN);
+    digitalWrite(GREEN_LED_PIN, LOW);
     delay(ACTION_DELAY);
     motorStop(motorPin);
   }
@@ -64,5 +66,8 @@ void readPinAndAction(int photoPin, int motorPin) {
 
 void loop() {
   readPinAndAction(PHOTO_PIN, MOTOR_PIN);
+  int sensorValue = analogRead(PHOTO_PIN);
+  Serial.print(sensorValue);
+  
 }
 

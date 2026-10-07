@@ -39,7 +39,7 @@ void lightUp() {
 void loop() {
   lightUp();
   //lcd.setCursor(1,0);
-  //lcd.print("This is a Test!");
+  lcd.print("This is a Test!");
   //lcd.setCursor(0, 1);
   //lcd.print(" Also a Test");
 
