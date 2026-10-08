@@ -1,6 +1,8 @@
 #include <Servo.h>
 
 const int soilPin = A0;
+int Green = 10;
+int Red = 11;
 
 Servo servo;
 
@@ -9,6 +11,9 @@ bool jordErVat = false;
 
 void setup() {
   Serial.begin(9600);
+  //Led deode
+  pinMode(Green, OUTPUT);
+  pinMode(Red, OUTPUT);
 
   // Servo er koblet til pin 9
   servo.attach(9);
@@ -41,6 +46,9 @@ void loop() {
   if (fuktighet < 45 && jordErVat == true) {
 
     Serial.println("Jorda er tørr!");
+    digitalWrite(Red, HIGH);
+    digitalWrite(Green, LOW);
+    
 
     // Servo går til 180 grader
     servo.write(180);
@@ -54,6 +62,10 @@ void loop() {
   else if (fuktighet > 55 && jordErVat == false) {
 
     Serial.println("Jorda er våt!");
+   
+    digitalWrite(Green, HIGH);
+    digitalWrite(Red, LOW);
+    
 
     // Servo går til 0 grader
     servo.write(0);
